@@ -501,7 +501,12 @@ int Score()
    printf("SCORE : %d",(length-5));
    score=length-5;
    GotoXY(50,8);
-   printf("Life : %d",life);
+   printf("Life Remaining : ");
+   for(int i=0;i<life;i++)
+   {
+       char a=3;            //for showing heart shape in terminal
+       printf("%c",a);
+   }
    return score;
 }
 int Scoreonly()
