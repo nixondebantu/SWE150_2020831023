@@ -422,20 +422,20 @@ void Boarder()
    system("cls");
    int i;
    GotoXY(food.x,food.y);   /*displaying food*/
-       printf("F");
+       printf("%c",15);     //modified displaying food
    for(i=10;i<71;i++)
    {
        GotoXY(i,10);
-           printf("!");
+           printf("-");     //modified up boarder
        GotoXY(i,30);
-           printf("!");
+           printf("-");     //modified down boarder
    }
    for(i=10;i<31;i++)
    {
        GotoXY(10,i);
-           printf("!");
+           printf("|");     //modified left boarder
        GotoXY(70,i);
-       printf("!");
+       printf("|");         //modified right boarder
    }
 }
 void Print()
