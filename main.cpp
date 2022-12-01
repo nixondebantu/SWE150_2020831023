@@ -232,9 +232,9 @@ void Down()
         GotoXY(head.x,head.y-i);
         {
             if(len==0)
-                printf("v");
+                printf("O");        //shape modified
             else
-                printf("*");
+                printf("|");
         }
         body[len].x=head.x;
         body[len].y=head.y-i;
@@ -316,9 +316,9 @@ void Left()
         GotoXY((head.x+i),head.y);
        {
                 if(len==0)
-                    printf("<");
+                    printf("O");
                 else
-                    printf("*");
+                    printf("-");  //shape modified
         }
         body[len].x=head.x+i;
         body[len].y=head.y;
@@ -340,9 +340,9 @@ void Right()
         GotoXY(body[len].x,body[len].y);
         {
             if(len==0)
-                printf(">");
+                printf("O");
             else
-                printf("*");
+                printf("-");    //shape modified
         }
         /*body[len].x=head.x-i;
         body[len].y=head.y;*/
@@ -523,9 +523,9 @@ void Up()
        GotoXY(head.x,head.y+i);
        {
            if(len==0)
-               printf("^");
+               printf("O");
            else
-               printf("*");
+               printf("|");     //shape modified
        }
        body[len].x=head.x;
        body[len].y=head.y+i;
