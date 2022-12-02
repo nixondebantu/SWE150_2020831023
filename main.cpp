@@ -366,7 +366,7 @@ void Bend()
                         body[len].x=bend[i].x;
                         body[len].y=bend[i].y+j;
                         GotoXY(body[len].x,body[len].y);
-                        printf("*");
+                        printf("|");
                         len++;
                         if(len==length)
                             break;
@@ -379,7 +379,7 @@ void Bend()
                         body[len].x=bend[i].x;
                         body[len].y=bend[i].y-j;
                         GotoXY(body[len].x,body[len].y);
-                        printf("*");
+                        printf("|");
                         len++;
                         if(len==length)
                             break;
@@ -396,7 +396,7 @@ void Bend()
                     body[len].x=bend[i].x+j;
                     body[len].y=bend[i].y;
                     GotoXY(body[len].x,body[len].y);
-                        printf("*");
+                        printf("-");
                    len++;
                    if(len==length)
                            break;
@@ -409,7 +409,7 @@ void Bend()
                    body[len].x=bend[i].x-j;
                    body[len].y=bend[i].y;
                    GotoXY(body[len].x,body[len].y);
-                       printf("*");
+                       printf("-");
                    len++;
                    if(len==length)
                        break;
