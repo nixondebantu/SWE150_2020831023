@@ -224,7 +224,7 @@ void load(){
     for(r=1;r<=20;r++){
     for(q=0;q<=100000000;q++);//to display the character slowly
     printf("%c",177);}
-    getch();
+    //getch();      //eleminating pause screen problem after loading 
 }
 void Down()
 {
@@ -500,9 +500,14 @@ int Score()
 {
    int score;
    GotoXY(20,8);
-   score=length-5;
-   printf("SCORE : %d",(length-5));
-   score=length-5;
+   score=(length-5)*lvl;
+   printf("SCORE : %d",(length-5)*lvl);
+   GotoXY(35,8);
+   printf("Level :");
+   if(lvl==1)   printf("Easy");
+   else if(lvl==2)  printf("Medium");
+   else printf("Hard");
+   score=(length-5)*lvl;
    GotoXY(50,8);
    printf("Life Remaining : ");
    for(int i=0;i<life;i++)
@@ -541,6 +546,14 @@ void Up()
 void level()        //function for level selection
 {
     system("cls");
+    printf("\n\n\tScore scale for different levels:\n\tEasy - 1 X Food\n\tMedium - 2 X Food\n\tHard - 3 X Food\n\n");
     printf("%c\n\n\tEnter 1 for level easy\n\tEnter 2 for level medium\n\tEnter 3 for level hard\n\n\tEnter your level: ",7);
     scanf("%d",&lvl);
+    printf("\n\tLevel ");
+    if(lvl==1)  printf("Easy");
+    else if(lvl==2)  printf("Medium");
+    else            printf("Hard");
+    if(lvl>3)   lvl=3;
+    printf(" successfully selected.\n\tPress any key to continue");
+    getch();
 }
