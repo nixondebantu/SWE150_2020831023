@@ -35,6 +35,8 @@ void Up();
 void Right();
 void ExitGame();
 int Scoreonly();
+int lvl;
+void level();
 
 struct coordinate{
     int x;
@@ -248,7 +250,7 @@ void Delay(long double k)
 {
     Score();
     long double i;
-    for(i=0;i<=(10000000);i++);
+    for(i=0;i<=(10000000-3000000*(lvl-1));i++);         //game speed level
 }
 void ExitGame()
 {
@@ -443,6 +445,7 @@ void Print()
    //GotoXY(10,12);
    printf("%c\tWelcome to the mini Snake game.\n\n\tModified by: Nixon Deb Antu\n\tRegistration No: 2020831023\n\n\t(press any key to continue)\n",7);
   getch();
+  level();
    system("cls");
    printf("%c\tGame instructions:\n",7);
    printf("\n-> Use arrow keys to move the snake.\n\n-> You will be provided foods at the several coordinates of the screen which you have to eat. Everytime you eat a food the length of the snake will be increased by 1 element and thus the score.\n\n-> Here you are provided with three lives. Your life will decrease as you hit the wall or snake's body.\n\n-> YOu can pause the game in its middle by pressing any key. To continue the paused game press any other key once again\n\n-> If you want to exit press esc. \n");
@@ -534,4 +537,10 @@ void Up()
    Bend();
    if(!kbhit())
        head.y--;
+}
+void level()        //function for level selection
+{
+    system("cls");
+    printf("%c\n\n\tEnter 1 for level easy\n\tEnter 2 for level medium\n\tEnter 3 for level hard\n\n\tEnter your level: ",7);
+    scanf("%d",&lvl);
 }
